@@ -1,7 +1,8 @@
-object WordCountStream {
+package DataStreamAPI
 
-    import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment}
-    import org.apache.flink.streaming.api.scala._
+object WindowWordCount {
+
+    import org.apache.flink.streaming.api.scala.{StreamExecutionEnvironment, _}
 
 
     def main(args: Array[String]): Unit = {
