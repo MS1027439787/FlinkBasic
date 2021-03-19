@@ -13,7 +13,7 @@ object WindowWordCount {
       //val env = StreamExecutionEnvironment.createLocalEnvironment()
       //val text: DataStream[String] = env.readTextFile("./FlinkBasic/src/main/resources/words")
       val env = StreamExecutionEnvironment.getExecutionEnvironment
-      val text = env.socketTextStream("192.168.100.254", 9999)
+      val text = env.socketTextStream("localhost", 9999)
       val counts = text.flatMap { _.toLowerCase.split("\\W+")filter{ _.nonEmpty } }
         .map { (_, 1) }
         .keyBy(_._1)
